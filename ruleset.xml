@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ruleset name="jroman00/Comparator">
+    <description>The coding standard for jroman00/Comparator.</description>
+
+    <!-- PSR2 -->
+    <rule ref="PSR2" />
+
+    <!-- Generic -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure" />
+    <rule ref="Generic.Files.LineEndings" />
+    <rule ref="Generic.Formatting.SpaceAfterCast" />
+
+    <!-- Squiz -->
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="ignoreNewlines" value="true" />
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+</ruleset>

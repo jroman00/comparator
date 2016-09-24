@@ -1,0 +1,34 @@
+{
+    "name": "jroman00/Comparator",
+    "description": "A trait to quickly and easily allow the comparison of two objects",
+    "license": "MIT",
+    "keywords": ["comparator"],
+    "authors": [
+        {
+            "name": "Justin Roman",
+            "email": "jroman00@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jroman00\\Comparator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/Stubs"
+        ]
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "^2.7"
+    },
+    "scripts": {
+        "phpcs": "./vendor/bin/phpcs --standard=ruleset.xml src/ tests/",
+        "phpunit": "./vendor/bin/phpunit",
+        "phpunit-coverage": "./vendor/bin/phpunit --coverage-html ./test-reports/html/"
+    }
+}
