@@ -19,7 +19,11 @@ trait ComparatorTrait
      */
     public static function sortAscending(array &$objects)
     {
-        uasort($objects, function ($a, $b) {
+        uasort($objects, function (self $a, self $b) {
+            /**
+             * @var $a $this
+             * @var $b $this
+             */
             return $a->compare($b);
         });
     }
@@ -31,40 +35,44 @@ trait ComparatorTrait
      */
     public static function sortDescending(array &$objects)
     {
-        uasort($objects, function ($a, $b) {
+        uasort($objects, function (self $a, self $b) {
+            /**
+             * @var $a $this
+             * @var $b $this
+             */
             return -1 * $a->compare($b);
         });
     }
 
     /**
-     * Assert that this object is equal to the given one.
+     * Determine if this object is logically equal to the given one.
      *
      * @param self $other
      * @return bool
      */
-    public function assertSame(self $other)
+    public function isEqual(self $other)
     {
         return $this->compare($other) === 0;
     }
 
     /**
-     * Assert that this object is less than the given one.
+     * Determine if this object is logically less than the given one.
      *
      * @param self $other
      * @return bool
      */
-    public function assertLessThan(self $other)
+    public function isLessThan(self $other)
     {
         return $this->compare($other) === -1;
     }
 
     /**
-     * Assert that this object is greater than the given one.
+     * Determine if this object is logically greater than the given one.
      *
      * @param self $other
      * @return bool
      */
-    public function assertGreaterThan(self $other)
+    public function isGreaterThan(self $other)
     {
         return $this->compare($other) === 1;
     }

@@ -8,11 +8,11 @@ use PHPUnit_Framework_TestCase;
 class ComparatorTraitTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * Data provider for testAssertSame.
+     * Data provider for testIsSame.
      *
      * @return array
      */
-    public function testAssertSameDataProvider()
+    public function testIsSameDataProvider()
     {
         return [
             [true, 2, 2],
@@ -25,24 +25,27 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test assertSame() method.
+     * Test isSame() method.
      *
-     * @dataProvider testAssertSameDataProvider
+     * @param bool $expected
+     * @param int $aInteger
+     * @param int $bInteger
+     * @dataProvider testIsSameDataProvider
      */
-    public function testAssertSame($expected, $aInteger, $bInteger)
+    public function testIsSame($expected, $aInteger, $bInteger)
     {
         $a = new IntegerComparatorStub($aInteger);
         $b = new IntegerComparatorStub($bInteger);
 
-        $this->assertSame($expected, $a->assertSame($b));
+        $this->assertSame($expected, $a->isEqual($b));
     }
 
     /**
-     * Data provider for testAssertLessThan.
+     * Data provider for testIsLessThan.
      *
      * @return array
      */
-    public function testAssertLessThanDataProvider()
+    public function testIsLessThanDataProvider()
     {
         return [
             [false, 2, 2],
@@ -55,24 +58,27 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test assertLessThan() method.
+     * Test isLessThan() method.
      *
-     * @dataProvider testAssertLessThanDataProvider
+     * @param bool $expected
+     * @param int $aInteger
+     * @param int $bInteger
+     * @dataProvider testIsLessThanDataProvider
      */
-    public function testAssertLessThan($expected, $aInteger, $bInteger)
+    public function testIsLessThan($expected, $aInteger, $bInteger)
     {
         $a = new IntegerComparatorStub($aInteger);
         $b = new IntegerComparatorStub($bInteger);
 
-        $this->assertSame($expected, $a->assertLessThan($b));
+        $this->assertSame($expected, $a->isLessThan($b));
     }
 
     /**
-     * Data provider for testAssertGreaterThan.
+     * Data provider for testIsGreaterThan.
      *
      * @return array
      */
-    public function testAssertGreaterThanDataProvider()
+    public function testIsGreaterThanDataProvider()
     {
         return [
             [false, 2, 2],
@@ -85,16 +91,19 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test assertGreaterThan() method.
+     * Test isGreaterThan() method.
      *
-     * @dataProvider testAssertGreaterThanDataProvider
+     * @param bool $expected
+     * @param int $aInteger
+     * @param int $bInteger
+     * @dataProvider testIsGreaterThanDataProvider
      */
-    public function testAssertGreaterThan($expected, $aInteger, $bInteger)
+    public function testIsGreaterThan($expected, $aInteger, $bInteger)
     {
         $a = new IntegerComparatorStub($aInteger);
         $b = new IntegerComparatorStub($bInteger);
 
-        $this->assertSame($expected, $a->assertGreaterThan($b));
+        $this->assertSame($expected, $a->isGreaterThan($b));
     }
 
     /**
