@@ -2,3 +2,5 @@
 /composer.phar
 /test-reports
 /.idea
+
+/.phpunit.result.cache
