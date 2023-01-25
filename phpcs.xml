@@ -2,6 +2,11 @@
 <ruleset name="jroman00/Comparator">
     <description>The coding standard for jroman00/Comparator.</description>
 
+    <!-- display progress -->
+    <arg value="p"/>
+    <!-- use colors in output -->
+    <arg name="colors"/>
+
     <!-- PSR2 -->
     <rule ref="PSR2" />
 
@@ -20,4 +25,8 @@
         </properties>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+
+    <!-- Paths to check -->
+    <file>src</file>
+    <file>tests</file>
 </ruleset>

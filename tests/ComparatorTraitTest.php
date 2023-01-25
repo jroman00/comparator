@@ -3,16 +3,16 @@
 namespace Jroman00\Comparator;
 
 use Jroman00\Comparator\Stubs\IntegerComparatorStub;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class ComparatorTraitTest extends PHPUnit_Framework_TestCase
+class ComparatorTraitTest extends TestCase
 {
     /**
      * Data provider for testIsSame.
      *
      * @return array
      */
-    public function testIsSameDataProvider()
+    public function isSameDataProvider()
     {
         return [
             [true, 2, 2],
@@ -30,7 +30,7 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
      * @param bool $expected
      * @param int $aInteger
      * @param int $bInteger
-     * @dataProvider testIsSameDataProvider
+     * @dataProvider isSameDataProvider
      */
     public function testIsSame($expected, $aInteger, $bInteger)
     {
@@ -45,7 +45,7 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
      *
      * @return array
      */
-    public function testIsLessThanDataProvider()
+    public function isLessThanDataProvider()
     {
         return [
             [false, 2, 2],
@@ -63,7 +63,7 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
      * @param bool $expected
      * @param int $aInteger
      * @param int $bInteger
-     * @dataProvider testIsLessThanDataProvider
+     * @dataProvider isLessThanDataProvider
      */
     public function testIsLessThan($expected, $aInteger, $bInteger)
     {
@@ -78,7 +78,7 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
      *
      * @return array
      */
-    public function testIsGreaterThanDataProvider()
+    public function isGreaterThanDataProvider()
     {
         return [
             [false, 2, 2],
@@ -96,7 +96,7 @@ class ComparatorTraitTest extends PHPUnit_Framework_TestCase
      * @param bool $expected
      * @param int $aInteger
      * @param int $bInteger
-     * @dataProvider testIsGreaterThanDataProvider
+     * @dataProvider isGreaterThanDataProvider
      */
     public function testIsGreaterThan($expected, $aInteger, $bInteger)
     {
